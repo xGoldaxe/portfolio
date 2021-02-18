@@ -1,0 +1,51 @@
+.skills {
+    width:70%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.skill {
+    width: 9px;
+    height: 9px;
+    background: #c1c1c1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+
+    &__text {
+        font-weight: 500;
+        font-size: 15px;
+        color: #c1c1c1;
+        text-align: center;
+        position: relative;
+        bottom: 135px;
+        height: 150px;
+        cursor: pointer;
+        overflow: visible;
+    }
+}
+
+.skillLineAnime {
+    width: 31.5%;
+    height: 2px;
+    background: black;
+    position: absolute;
+    left: 8px;
+    //to align it
+    top: 50%;
+    transform: scaleX(0) translateY(-50%);
+    transform-origin: center left;
+}
+
+@media screen and (max-width: 1200px) {
+    .skill {
+        &__text {
+            font-size: 10px;
+            bottom: 80px;
+            height: 100px;
+        }
+    }
+
+}

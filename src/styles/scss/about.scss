@@ -1,0 +1,81 @@
+.about {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    font-family: geomanist;
+    width: 100vw;
+    h3 {
+        font-size: 100px;
+        position: relative;
+        width: max-content;
+        &::after{
+            content: "";
+            background: lighten(#C39031, 10%);
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            top: 60px;
+            left: 30px;
+            z-index: -1;
+        }
+    }
+    &__text {
+        width: 80%;
+        font-size: 70px;
+        &__contact {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            li {
+                font-size: 80px;
+                margin: 20px 0;
+                list-style: none;
+                position: relative;
+                cursor: pointer;
+                &::after {
+                    content: "";
+                    background: lighten(#C1C1C1, 10%);
+                    width: 100%;
+                    height: 50%;
+                    position: absolute;
+                    top: 60px;
+                    left: 30px;
+                    z-index: -1;
+                }
+            }
+        }
+        p {
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            position: relative;
+            &::after {
+                content: "";
+                background:  #c1c1c1;
+                width: 100px;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                right: -50px;
+                z-index: -1;
+            }
+            text-align: right;
+            &:nth-child(2n) {
+                text-align: left;
+                &::after {
+                    content: "";
+                    background:  #c1c1c1;
+                    width: 100px;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    left: -50px;
+                    z-index: -1;
+                }
+            }
+        }
+        &__ty {
+            font-style: italic;
+            font-weight: 900;
+        }
+    }
+}

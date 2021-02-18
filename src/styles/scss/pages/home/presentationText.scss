@@ -1,0 +1,54 @@
+.presentationText {
+    width: 40vw;
+    min-width: 600px;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(50% + 15vh);
+    transform: translateY(-50%);
+    margin-left: 8vw;
+    h1 {
+        font-size: 45px;
+        position: relative;
+    }
+    p {
+        position: relative;
+        bottom: 10px;
+        margin-left: 35px;
+        font-size: 30px;
+        color: darken(#c1c1c1, 20%);
+        &::before {
+            content:'';
+            position: absolute;
+            left: -30px;
+            background: #C39031;
+            height: 100%;
+            width: 15px;
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .presentationText {
+        position: relative;
+        order: 3;
+        top: 0;
+        display: flex;
+        transform: none;
+        min-width: 0;
+        width: 100%;
+        align-items: center;
+        h1 {
+            font-size: 35px;
+            width: max-content;
+        }
+        p {
+            font-size: 25px;
+            width: max-content;
+
+        }
+    }
+}

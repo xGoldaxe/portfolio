@@ -1,0 +1,21 @@
+@import './scss/base.scss';
+@import './scss/content.scss';
+@import './scss/about.scss';
+@import './scss/boxSection.scss';
+
+//components
+@import './scss/components/link.scss';
+
+//pages
+@import './scss/pages/home/home.scss';
+@import './scss/pages/home/circle.scss';
+@import './scss/pages/home/nav.scss';
+@import './scss/pages/home/presentationText.scss';
+@import './scss/pages/home/scroll.scss';
+@import './scss/pages/home/skills.scss';
+
+
+
+
+//utils
+@import './scss/utils/fonts.scss';
