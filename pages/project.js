@@ -22,26 +22,51 @@ export default function Home({handleTransition}) {
             </div>
             
             <div className="boxSection">
-                <div className="block1"></div>
-                <div className="block2"></div>
-                <div className="boxSection--container">
-                    <h2>I make website with special attention</h2>
-                    <div className="boxSection__project project1">
-                        <img src="image/power4.PNG" alt="power 4 online"/>
+                {/* <h2>I make website with special attention</h2> */}
+                <div className="boxSection__projects--container">
+                    <div className="boxSection__projects">
+                        <div className="boxSection__projects__project">
+                            <img src="image/power4.PNG" alt="power 4 online"/>
+                            <div className="boxSection__projects__project__preview">
+                                <div className="boxSection__projects__project__preview__bg"></div>
+                                <h3>Puissance 4 online</h3>
+                            </div>
+                        </div>
+                        <div className="boxSection__projects__project">
+                            <img src="image/fm.PNG" alt="old porfolio"/>
+                            <div className="boxSection__projects__project__preview">
+                                <div className="boxSection__projects__project__preview__bg"></div>
+                                <h3>France meme landing page</h3>
+                            </div>
+                        </div>
+                        <div className="boxSection__projects__project">
+                            <img src="image/blocky.PNG" alt="blocky game"/>
+                            <div className="boxSection__projects__project__preview">
+                                <div className="boxSection__projects__project__preview__bg"></div>
+                                <h3>Blocky's game editor</h3>
+                            </div>
+                        </div>
+                        <div className="boxSection__projects__project">
+                            <img src="image/insanet.PNG" alt="insane transition"/>
+                            <div className="boxSection__projects__project__preview">
+                                <div className="boxSection__projects__project__preview__bg"></div>
+                                <h3>Insane transition library</h3>
+                            </div>
+                        </div>
                     </div>
-                    <div className="boxSection__project project2">
-                        <img src="image/fm.PNG" alt="old porfolio"/>
+                    <div className="boxSection__decorationTop">
+                        <img src="/image/textDecoration.svg" alt=""/>
+                        <div className="boxSection__decorationTop__line"></div>
                     </div>
-                    <div className="boxSection__project project3">
-                        <img src="image/blocky.PNG" alt="blocky game"/>
-                    </div>
-                    <div className="boxSection__project project4">
-                        <img src="image/insanet.PNG" alt="insane transition"/>
+                    <div className="boxSection__decoration">
+                        <img src="/image/textDecoration.svg" alt=""/>
+                        <div className="boxSection__decoration__line"></div>
                     </div>
                 </div>
+            
             </div>
 
-            <div className="about">
+            {/* <div className="about">
                 <div className="about__text">
                     <h3>I develop website</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aspernatur cumque cupiditate debitis molestias. Eos distinctio laboriosam obcaecati! Possimus consectetur quod praesentium repellat in nihil, amet numquam delectus. Deserunt dolorum, ab animi quia ad est officiis unde amet aliquid.</p>
@@ -57,6 +82,6 @@ export default function Home({handleTransition}) {
                     </div>
                     <p className="about__text__ty">Thanks for your visit! have a great day sir</p>
                 </div>
-            </div>
+            </div> */}
         </div>
 )}

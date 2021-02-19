@@ -3,15 +3,16 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
 
 export default function horizontalScroll() {
-    return gsap.to('.boxSection--container', {
+    return gsap.to('.boxSection__projects', {
         scrollTrigger: {
-            trigger: ".boxSection--container",
+            trigger: ".boxSection",
             scrub: 1,
             pin: '.boxSection',
             end: () => "+=" +
-            1.3 * document.querySelector(".boxSection--container").offsetWidth,
+            1.3 * document.querySelector(".boxSection__projects").offsetWidth,
         },
-        xPercent: -70,
+        xPercent: -100,
+        x: window.innerWidth
     })
 }
 
