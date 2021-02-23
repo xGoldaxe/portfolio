@@ -1,0 +1,85 @@
+.project {
+    height: 100vh;
+    display: flex;
+    &__img {
+        width: 70vw;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        &__bg {
+            background: darken(#c1c1c1, 40%);
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        img {
+            height: 100%;
+        }
+    }
+    &__desc {
+        position: relative;
+        width: 40vw;
+        min-width: 400px;
+        max-width: 700px;
+        background: #c1c1c1;
+        box-sizing: border-box;
+        padding: 50px;
+        &__back {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            cursor: pointer;
+            img {
+                width: 100%;
+                height: 100%;
+                transform: rotate(180deg);
+            }
+        }
+        ul {
+            display: flex;
+            padding:0;
+            color: darken(#c1c1c1, 40%);
+            font-weight: 900;
+            font-size: 25px;
+            li {
+                margin: 0 10px;
+                list-style: '#';
+            }
+        }
+        h3 {
+            color: $secondColor;
+            font-size: 50px;
+
+        }
+        p {
+            font-size: 25px;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            line-height: 28px;
+        }
+        a {
+            font-size: 25px;
+            p {
+                margin-block-start: 3em;
+            }
+        }
+        &::after {
+            content: "";
+            width: 90%;
+            left: 5%;
+            
+            height: 3px;
+            background: black;
+            position: absolute;
+            bottom: 40px;
+        }
+    }
+}

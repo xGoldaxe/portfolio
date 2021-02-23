@@ -28,6 +28,7 @@ export default function StyledLink({children, onClick}) {
         })
     }
     
+    
     return (
         <div className="link" onClick={onClick} onMouseEnter={onEnter} onMouseLeave={onLeave}>
             <p>{children}</p>

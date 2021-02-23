@@ -8,8 +8,7 @@ export default function horizontalScroll() {
             trigger: ".boxSection",
             scrub: 1,
             pin: '.boxSection',
-            end: () => "+=" +
-            1.3 * document.querySelector(".boxSection__projects").offsetWidth,
+            end: () => "+=" + document.querySelector(".boxSection__projects").offsetWidth,
         },
         xPercent: -100,
         x: window.innerWidth

@@ -3,7 +3,7 @@ import {useEffect} from 'react'
 import Link from 'next/link'
 import horizontalScroll from '../src/js/horizontalScroll'
 import {gsap} from 'gsap'
-
+import projects from '../public/projects/project'
 
 export default function Home({handleTransition}) {
     useEffect(() => {
@@ -25,34 +25,16 @@ export default function Home({handleTransition}) {
                 {/* <h2>I make website with special attention</h2> */}
                 <div className="boxSection__projects--container">
                     <div className="boxSection__projects">
-                        <div className="boxSection__projects__project">
-                            <img src="image/power4.PNG" alt="power 4 online"/>
-                            <div className="boxSection__projects__project__preview">
-                                <div className="boxSection__projects__project__preview__bg"></div>
-                                <h3>Puissance 4 online</h3>
-                            </div>
-                        </div>
-                        <div className="boxSection__projects__project">
-                            <img src="image/fm.PNG" alt="old porfolio"/>
-                            <div className="boxSection__projects__project__preview">
-                                <div className="boxSection__projects__project__preview__bg"></div>
-                                <h3>France meme landing page</h3>
-                            </div>
-                        </div>
-                        <div className="boxSection__projects__project">
-                            <img src="image/blocky.PNG" alt="blocky game"/>
-                            <div className="boxSection__projects__project__preview">
-                                <div className="boxSection__projects__project__preview__bg"></div>
-                                <h3>Blocky's game editor</h3>
-                            </div>
-                        </div>
-                        <div className="boxSection__projects__project">
-                            <img src="image/insanet.PNG" alt="insane transition"/>
-                            <div className="boxSection__projects__project__preview">
-                                <div className="boxSection__projects__project__preview__bg"></div>
-                                <h3>Insane transition library</h3>
-                            </div>
-                        </div>
+                        {projects.projects.map((project)=>{
+                            return(                        
+                            <div className="boxSection__projects__project" onClick={() => handleTransition(`project/${project.name.toLowerCase().split(' ').join('_')}`)}>
+                                <img src={`/image/${project.image}`} alt={project.name}/>
+                                <div className="boxSection__projects__project__preview">
+                                    <div className="boxSection__projects__project__preview__bg"></div>
+                                    <h3>{project.name}</h3>
+                                </div>
+                            </div>)
+                        })}
                     </div>
                     <div className="boxSection__decorationTop">
                         <img src="/image/textDecoration.svg" alt=""/>

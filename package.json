@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "fs": "0.0.1-security",
     "gsap": "^3.6.0",
     "insanetransition": "^1.1.0-1",
     "next": "10.0.7",

@@ -13,7 +13,7 @@ export default function mainTransition(resolve,transitionSwap) {
         createBlock(entry, {
             width: 100/max +'%', 
             height: '100%', 
-            background: 'grey', 
+            background: '#c1c1c1', 
             position: 'absolute',
             left: 100/max*i + '%',
             transform: 'scaleY(0)',

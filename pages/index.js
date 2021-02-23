@@ -1,13 +1,10 @@
-import Head from 'next/head'
 import {useEffect, useState} from 'react'
 import circle from '../src/js/circle'
 import skill from '../src/js/skills'
 import scroll from '../src/js/scroll'
-import Link from 'next/link'
-import {gsap} from 'gsap'
 import { useRouter } from 'next/router'
 import homeAppear from '../src/js/animation/homeAppear'
-import StyledLink from '../components/StyledLink'
+import Header from '../components/Header'
 
 export default function Home({handleTransition, transitionOver}) {
   const router = useRouter()
@@ -46,10 +43,7 @@ export default function Home({handleTransition, transitionOver}) {
       <header>
           <div className="headerLine"></div>
           <nav>
-              <StyledLink>Accueil</StyledLink>
-              <StyledLink onClick={() => handleTransition('./project')}>Projects</StyledLink>
-              <StyledLink onClick={() => handleTransition('./project')}>Contact</StyledLink>
-              <StyledLink>Blog</StyledLink>
+              <Header handleTransition={handleTransition}/>
           </nav>
       </header>
       <div className="presentationText">
