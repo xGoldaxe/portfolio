@@ -39,7 +39,7 @@ export default function Home({handleTransition, transitionOver}) {
   
 
   return (
-    <div className="home">
+    <div className="home" style={{display: 'none'}}>
       <header>
           <div className="headerLine"></div>
           <nav>

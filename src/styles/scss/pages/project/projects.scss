@@ -1,4 +1,4 @@
-.project {
+.projects {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -95,4 +95,12 @@
             }
         }
     }
+}
+
+.section {
+    width: calc(100% - 100px);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
