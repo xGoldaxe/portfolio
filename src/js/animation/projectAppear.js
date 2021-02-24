@@ -7,47 +7,52 @@ export default async function projectAppear(resolve) {
            resolve()
         }
     });
-    tl.from('.project__info__scroller__bar', {
+    tl.from('.projects__info__scroller__bar', {
         transformOrigin: "top center",
         scaleY: 0,
         duration: 0.5,
         ease: 'power4.in',
     })
     let texts = []
-    texts.push(document.querySelectorAll('.project__info p'))
-    texts.push(document.querySelectorAll('.project__info h3'))
-    texts.push(document.querySelectorAll('.project__info h4'))
+
+    texts.push(document.querySelectorAll('.projects__info__desc__textContainer'))
+    texts.push(document.querySelectorAll('.projects__info__scroller__previous p'))
+    texts.push(document.querySelectorAll('.projects__info__scroller__previous h4'))
+    tl.addLabel("firstLabel")
     tl.from(texts, {
         opacity: 0,
         xPercent: 50,
         duration: 0.5,
         ease: 'power4.out',
-        stagger: 0.05
-    })
-    tl.from('.project__image', {
+        stagger: {
+            each: 0.1,
+            from: "random",
+        }
+    }, "firstLabel")
+    tl.from('.projects__image', {
         opacity: 0,
         xPercent: 50,
         duration: 1,
         ease: 'power4.out',
-    })
-    tl.to('.project__image__mask', {
+    }, "firstLabel")
+    tl.to('.projects__image__mask', {
         transformOrigin: "left center",
         scaleX: 0,
         duration: 0.5
     })
-    tl.addLabel('firstLabel')
-    tl.from('.project__image__topDecoration', {
+    tl.addLabel('secondLabel')
+    tl.from('.projects__image__topDecoration', {
         x: 0,
         y: 0,
         ease: 'power4.out',
         duration: 0.5
-    }, "firstLabel")
-    tl.from('.project__image__bottomDecoration', {
+    }, "secondLabel")
+    tl.from('.projects__image__bottomDecoration', {
         x: 0,
         y: 0,
         ease: 'power4.out',
         duration: 0.5
-    }, "firstLabel")
+    }, "secondLabel")
 
     //second step nav
     headerAppear(tl, 0.7, "firstLabel")
