@@ -31,12 +31,12 @@ export default function Project({ projectData, handleTransition }) {
                 <img src={`/image/${projectData.image}`} alt=""/>
             </div>
             <div className="project__desc">
-                <div className="project__desc__back" onClick={() => handleTransition('/project')}>
+                <div className="project__desc__back" onClick={() => handleTransition('/project', 'transition1')}>
                     <img src="/image/arrow.svg" alt=""/>
                 </div>
                 <ul className="project__tag">
-                    {projectData.tags.map((tag)=>{
-                        return <li>{tag}</li>
+                    {projectData.tags.map((tag, i)=>{
+                        return <li key={i}>{tag}</li>
                     })}
                 </ul>
                 <h3>{projectData.name}</h3>

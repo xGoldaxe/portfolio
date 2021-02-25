@@ -1,7 +1,7 @@
 import {gsap} from 'gsap'
 import headerAppear from './headerAppear';
 
-export default async function projectAppear(resolve) {
+export default function projectAppear(resolve) {
     var tl = gsap.timeline({
         onComplete: function(){
            resolve()
@@ -60,4 +60,6 @@ export default async function projectAppear(resolve) {
         x: 20,
         opacity: 0,
     })  
+
+    return tl
 }

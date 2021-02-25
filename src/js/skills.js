@@ -4,36 +4,7 @@ export default function skill() {
     const skills = document.querySelectorAll('.skill__text')
     createSkillListener(skills)
     
-    var firstTl = gsap.timeline({
-        onUpdate: function() {
-            if(!document.querySelector('.leftLine')) {
-                this.kill()
-            }
-        },
-        onComplete: function() {
-        //then normal occurence
-        var mainTl = gsap.timeline({
-            repeat: -1,
-            onUpdate: function() {
-                if(!document.querySelector('.leftLine')) {
-                    this.kill()
-                }
-            },
-        })
-        skills.forEach((skill, i) => {
-            //move line
-            if(i === 0) {
-                mainTl.add(moveLine(3), "-=0.1")
-            }
-            //block animation
-            mainTl.add(createTl(skill, i), "-=0.4")
-            //move line
-            if(i !== 3) {
-                mainTl.add(moveLine(i), "-=0.1")
-            }
-        })
-
-    }});
+    var firstTl = gsap.timeline({});
     //first occurence
     skills.forEach((skill, i) => {
         //block animation
@@ -49,6 +20,31 @@ export default function skill() {
             firstTl.add(moveLine(i), "-=0.1")
         }
     })
+
+    var mainTl = gsap.timeline({
+        repeat: -1,
+        onUpdate: function() {
+            if(!document.querySelector('.leftLine')) {
+                this.kill()
+            }
+        },
+    })
+    firstTl.add(mainTl)
+    skills.forEach((skill, i) => {
+        //move line
+        if(i === 0) {
+            mainTl.add(moveLine(3), "-=0.1")
+        }
+        //block animation
+        mainTl.add(createTl(skill, i), "-=0.4")
+        //move line
+        if(i !== 3) {
+            mainTl.add(moveLine(i), "-=0.1")
+        }
+    })
+
+    
+    return firstTl
 }
 
 

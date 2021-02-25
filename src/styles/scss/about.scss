@@ -27,12 +27,12 @@
         font-family: geomanist;
         z-index: 2;
         span {
-            font-size: 60px;
+            font-size: 50px;
         }
         p {
             margin-block-start: 60px;
             margin-block-end: 30px;
-            font-size: 32px;
+            font-size: 25px;
             letter-spacing: 2px;
             line-height: 43px;
         }
@@ -59,18 +59,25 @@
     .about__text {
         width: 80%;
         margin-left: 10%;
+        p {
+            font-size: 23px;
+            letter-spacing: 0px;
+            line-height: 41px;
+        }
+        span {
+            font-size: 35px;
+        }
     }
 }
 
 @media screen and (max-width: 900px) {
     .about__text {
         span {
-            font-size: 40px;
+            font-size: 30px;
         }
         p{
-            font-size: 25px;
-            letter-spacing: 0px;
-            line-height: 41px;
+            font-size: 20px;
+            line-height: 34px;
         }
     }
 }

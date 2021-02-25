@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter()
   const [transitionOver, setTransitionOver] = useState(true)
   const [loadingPage, setLoadingPage] = useState(true)
+  const [actualTransition, setActualTransition] = useState(null)
   
   
   // Router.events.on('routeChangeStart', () => setLoadingPage(true)); 
@@ -20,32 +21,32 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   useEffect(() => {
-    console.log(loadingPage)
-      if(loadingPage === false && transitionOver === false) {
-        const promise1 = new Promise(resolve => {
-          transition(resolve, 'reverseTransition0')
-        })
-        promise1.then(()=>{
-          setLoadingPage(false)
-          setTransitionOver(true)
-        })
-      }
-  }, [loadingPage])
+    if(loadingPage === false && transitionOver === false) {
+      const promise1 = new Promise(resolve => {
+        transition(resolve, actualTransition, 1)
+      })
+      promise1.then(()=>{
+        setLoadingPage(false)
+        setTransitionOver(true)
+      })
+    }
+  }, [loadingPage, actualTransition])
 
-  
-  function handleTransition(href) {
+  function handleTransition(href, transName) {
     if(router.pathname !== href) {
       setLoadingPage(false)
       const promise = new Promise(resolve => {
-        transition(resolve, 'transition0')
+        transition(resolve, transName, 0)
       })
       promise.then(()=>{
+        setActualTransition(transName)
         setTransitionOver(false)
         router.push(href)
         setLoadingPage(true)
       })
     }
   }
+
 
   return <>
     {/* <Test /> */}

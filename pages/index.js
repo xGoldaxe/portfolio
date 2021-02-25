@@ -5,34 +5,51 @@ import scroll from '../src/js/scroll'
 import { useRouter } from 'next/router'
 import homeAppear from '../src/js/animation/homeAppear'
 import Header from '../components/Header'
+import { makeCancelable } from '../src/js/lib/cancelablePromise'
 
 export default function Home({handleTransition, transitionOver}) {
   const router = useRouter()
-  const [mainTl, setMainTl] = useState(null)
+  let cancelablePromise = null
+  let skillTl = null
 
   useEffect(() => {
     document.querySelector('.home').style.display = "none"
 
-    return(()=> {
-    })
+
   }, [])
 
   useEffect(() => {
     if(transitionOver) {
       document.querySelector('.home').style.display = "flex"
 
-      const promise1 = new Promise((resolve, reject) => {
-        homeAppear(resolve)
-      });
-      promise1.then(()=> {
-        circle('#circle', 1.3, 3, 6, '#c1c1c1', '#C39031')
-        skill()
-  
-        scroll()
-        document.querySelector('.home').addEventListener('wheel', ()=> {
-          handleTransition('./project')
+
+      cancelablePromise = makeCancelable(
+        new Promise((resolve, reject) => {
+          homeAppear(resolve)
         })
-      })
+      );
+      cancelablePromise
+        .promise
+        .then(() => {
+        
+          circle('#circle', 1.3, 3, 6, '#c1c1c1', '#C39031')
+          skillTl = skill()
+    
+          scroll()
+          document.querySelector('.home').addEventListener('wheel', ()=> {
+            handleTransition('./project')
+          })
+        })
+        .catch((reason) => {});
+    }
+    return()=>{
+      if(cancelablePromise) {
+        cancelablePromise.cancel()
+      }
+
+      if(skillTl !== null) {
+        skillTl.kill(true)
+      }
     }
   }, [transitionOver])
 

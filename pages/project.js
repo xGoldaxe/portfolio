@@ -4,30 +4,50 @@ import projectAppear from '../src/js/animation/projectAppear'
 import scroll from '../src/js/scroll'
 import projects from '../public/projects/project.json'
 import projectTransiton from '../src/js/transition/projectTransition'
-
+import {makeCancelable} from '../src/js/lib/cancelablePromise'
 
 export default function Home({handleTransition, transitionOver}) {
     const [actualProject, setActualProject] = useState(0)
     const [inTransition, setInTransition] = useState(true)
     const ALLPROJECTS = projects.projects
+    let tl = null
+    let cancelablePromise = null
 
     useEffect(() => {
         document.querySelector('.projectsPage').style.display = "none"
+        return ()=>{
+            if(tl !== null) {
+                tl.kill()
+            }
+        }
     }, [])
 
     useEffect(() => {
         if(transitionOver) {
             document.querySelector('.projectsPage').style.display = "flex"
-
-            const promise1 = new Promise((resolve, reject) => {
-                projectAppear(resolve)
-            });
-            promise1.then(()=> {   
+            
+            ////
+            cancelablePromise = makeCancelable(
+                new Promise((resolve, reject) => {
+                    tl = projectAppear(resolve)
+                })
+            );
+            cancelablePromise
+            .promise
+            .then(() => {
                 scroll()
                 setInTransition(false)
             })
+            .catch((reason) => {});
+            
+        }
+        return()=>{
+            if(cancelablePromise) {
+                cancelablePromise.cancel()
+            }
         }
     }, [transitionOver])
+    
     
     async function updateProject(e, inTransition) {
         if(!inTransition && ((e.deltaY > 0 && actualProject < ALLPROJECTS.length-1) || (e.deltaY < 0 && actualProject > 0))) {
@@ -43,8 +63,27 @@ export default function Home({handleTransition, transitionOver}) {
         }
     }
 
+    async function handleNewProject(direction, inTransition) {
+        if(!inTransition && (actualProject < ALLPROJECTS.length-1 || actualProject > 0)) {
+            setInTransition(true)
+            await projectTransiton()
+            setInTransition(false)
+            if(direction === "+" && actualProject < ALLPROJECTS.length-1) {
+                setActualProject(a => a += 1)
+            } else if (direction === "-" && actualProject > 0) {
+                setActualProject(a => a -= 1)
+            }
+            projectTransiton(true)
+        }
+    }
+
     return (
     <div className="projectsPage">
+        <div style={{display: "none"}}>
+            {ALLPROJECTS.map((project,i)=>{
+                <img key={i} src={`/image/${project.image}`} />
+            })}
+        </div>
         <header>
             <div className="headerLine"></div>
             <Header handleTransition={handleTransition}/>
@@ -54,7 +93,7 @@ export default function Home({handleTransition, transitionOver}) {
                 <div className="projects__info">
                     <div className="projects__info__scroller">
                         {actualProject > 0 ?
-                            <div className="projects__info__scroller__previous">
+                            <div className="projects__info__scroller__previous" onClick={() => handleNewProject('-', inTransition)}>
                                 <p>previous</p>
                                 <h4>{ALLPROJECTS[actualProject-1].name}</h4>
                             </div> :
@@ -65,7 +104,7 @@ export default function Home({handleTransition, transitionOver}) {
                         }
                         <div className="projects__info__scroller__bar"></div>
                         {actualProject < ALLPROJECTS.length-1 ?
-                            <div className="projects__info__scroller__previous">
+                            <div className="projects__info__scroller__previous" onClick={() => handleNewProject('+', inTransition)}>
                                 <p>next</p>
                                 <h4>{ALLPROJECTS[actualProject+1].name}</h4>
                             </div> :
@@ -80,7 +119,10 @@ export default function Home({handleTransition, transitionOver}) {
                             <p className="projects__info__desc__textContainer__number">{"0" + (actualProject+1)}</p>
                         </div>
                         <div className="projects__info__desc__textContainer">
-                            <h3 className="projects__info__desc__textContainer__title">{ALLPROJECTS[actualProject].name}</h3>
+                            <h3 className="projects__info__desc__textContainer__title" 
+                            onClick={() => handleTransition(`project/${ALLPROJECTS[actualProject].name.toLowerCase().split(' ').join('_')}`, 'transition1')}>
+                                {ALLPROJECTS[actualProject].name}
+                            </h3>
                         </div>
                         <div className="projects__info__desc__textContainer">
                             <p className="projects__info__desc__textContainer__date">JAN. 2020</p>
@@ -89,7 +131,7 @@ export default function Home({handleTransition, transitionOver}) {
                 </div>
 
                 <div className="projects__image--container">
-                    <div className="projects__image" onClick={() => handleTransition(`project/${ALLPROJECTS[actualProject].name.toLowerCase().split(' ').join('_')}`)}>
+                    <div className="projects__image" onClick={() => handleTransition(`project/${ALLPROJECTS[actualProject].name.toLowerCase().split(' ').join('_')}`, 'transition1')}>
                         <div className="projects__image__container">
                             <img src={`/image/${ALLPROJECTS[actualProject].image}`} alt="project" />
                         </div>

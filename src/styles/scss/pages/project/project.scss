@@ -28,6 +28,7 @@
         max-width: 700px;
         box-sizing: border-box;
         padding: 50px;
+        padding-top: 60px;
         &__back {
             width: 40px;
             height: 40px;
@@ -48,9 +49,13 @@
             color: darken(#c1c1c1, 40%);
             font-weight: 900;
             font-size: 25px;
+            display: inline;
             li {
-                margin: 0 10px;
-                list-style: '#';
+                display: inline;
+                margin-right: 15px;
+                &::before {
+                    content: '#';
+                }
             }
         }
         h3 {
@@ -79,6 +84,41 @@
             background: black;
             position: absolute;
             bottom: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .project {
+        flex-direction: column;
+        height: auto;
+        &__img {
+            width: 100%;
+            height: auto;
+            order: 1;
+            img {
+                max-width: 100%;
+            }
+        }
+        &__desc {
+            width: 100%;
+            height: auto;
+            min-width: 0;
+            padding: 50px 20px;
+            &__back {
+                left: 20px;
+            }
+            h3 {
+                font-size: 40px;
+            }
+            p {
+                font-size: 23px;
+            }
+            ul {
+                li {
+                    font-size: 20px;
+                }
+            }
         }
     }
 }
