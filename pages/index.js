@@ -34,11 +34,6 @@ export default function Home({handleTransition, transitionOver}) {
         
           circle('#circle', 1.3, 3, 6, '#c1c1c1', '#C39031')
           skillTl = skill()
-    
-          scroll()
-          document.querySelector('.home').addEventListener('wheel', ()=> {
-            handleTransition('./project')
-          })
         })
         .catch((reason) => {});
     }
@@ -107,12 +102,7 @@ export default function Home({handleTransition, transitionOver}) {
             </div>
         </div>
       <div id="circle--wrapper">
-          <img src='/image/pierre1.png' alt="pierre image" />
-      </div>
-
-      <div className="scroll">
-        <p>scroll</p>
-        <div className="scroll__line"></div>
+          <img src='/image/pierre1.png' alt="pierre image"  width="288" height="804"/>
       </div>
   </div>
 )}

@@ -25,7 +25,7 @@ export default function Home({handleTransition, transitionOver}) {
             <div className="about__text__line"></div>
         </div>
         <div className="about__image">
-            <img src='/image/blackBelt.svg' alt="pierre image" />
+            <img src='/image/blackBelt.svg' alt=""/>
         </div>
 
   </div>

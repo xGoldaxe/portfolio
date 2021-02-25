@@ -51,8 +51,9 @@ function MyApp({ Component, pageProps }) {
   return <>
     {/* <Test /> */}
     <Head>
-      <title>PIERRE EVL - Portfollio</title>
+      <title>Pierre Leveque - portfolio</title>
       <meta name="viewport" content="initial-scale=1, minimum-scale=1" />
+      <meta name="description" content="Pierre leveque developpeur frontend, créateur d'application web et de site performant et SEO efficace grâce au technologies de points du développement web."/>
     </Head>
     <Component {...pageProps} handleTransition={handleTransition} transitionOver={transitionOver}/>
   </>

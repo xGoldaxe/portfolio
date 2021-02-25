@@ -1,5 +1,6 @@
 {"projects":[{
     "name":"Puissance 4 online",
+    "date": "Jan. 2021",
     "tags": ["node","react","html","sass","heroku","personal hosting"],
     "desc":"The goal of this projects was to train my fullstack skills, its an online power 4 working with the socket library : scocket.io. So its in real time. This webapp include differents kind of games : ranked and privates games. There is a matchmaking for ranked games. This webapp was made with node.js and react",
     "image": "power4.png",
@@ -7,6 +8,7 @@
 },
 {
     "name": "France Meme Landing Page",
+    "date": "Jan. 2021",
     "tags": ["next.js","react","html","sass","personal hosting"],
     "desc": "Presentation page of the biggest french meme server on discord!",
     "image": "fm.PNG",
@@ -14,6 +16,7 @@
 },
 {
     "name": "Blocky's game editor",
+    "date": "Feb. 2021",
     "tags": ["vanilla js", "canvas api", "2d", "game", "personal hosting"],
     "desc": "A small game made for fun, with a level editor to create your own amazing levels",
     "image": "blocky.PNG",
@@ -21,6 +24,7 @@
 },
 {
     "name": "Insane transition library",
+    "date": "Oct. 2020",
     "tags": ["js", "html", "css", "npm", "library", "personal hosting"],
     "desc": "My first library on npm, its provide great and optimised transition, using js promises and css animations. Also include the presentation website and a small documentation",
     "image": "insanet.PNG",

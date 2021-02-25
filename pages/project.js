@@ -125,7 +125,7 @@ export default function Home({handleTransition, transitionOver}) {
                             </h3>
                         </div>
                         <div className="projects__info__desc__textContainer">
-                            <p className="projects__info__desc__textContainer__date">JAN. 2020</p>
+                            <p className="projects__info__desc__textContainer__date">{ALLPROJECTS[actualProject].date}</p>
                         </div>
                     </div>
                 </div>
