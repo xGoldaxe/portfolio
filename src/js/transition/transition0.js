@@ -8,7 +8,7 @@ export function transition0 (resolve, entry) {
         createBlock(entry, {
             width: 100/max +'%', 
             height: '100%', 
-            background: '#c1c1c1', 
+            background: '#debc7c', 
             position: 'absolute',
             left: 100/max*i + '%',
             transform: 'scaleY(0)',

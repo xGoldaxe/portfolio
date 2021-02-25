@@ -1,7 +1,7 @@
 import {gsap} from 'gsap'
 import React, { useEffect, useRef } from 'react'
 
-export default function StyledLink({children, onClick}) {
+export default function StyledLink({children, onClick, className = "link"}) {
     const ref = useRef(null)
 
     const onEnter = () => {
@@ -30,7 +30,7 @@ export default function StyledLink({children, onClick}) {
     
     
     return (
-        <div className="link" onClick={onClick} onMouseEnter={onEnter} onMouseLeave={onLeave}>
+        <div className={className} onClick={onClick} onMouseEnter={onEnter} onMouseLeave={onLeave}>
             <p>{children}</p>
             <div className="link__line" ref={ref}></div>
         </div>

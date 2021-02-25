@@ -5,6 +5,7 @@ import scroll from '../src/js/scroll'
 import projects from '../public/projects/project.json'
 import projectTransiton from '../src/js/transition/projectTransition'
 import {makeCancelable} from '../src/js/lib/cancelablePromise'
+import TopBar from '../components/TopBar'
 
 export default function Home({handleTransition, transitionOver}) {
     const [actualProject, setActualProject] = useState(0)
@@ -89,6 +90,7 @@ export default function Home({handleTransition, transitionOver}) {
             <Header handleTransition={handleTransition}/>
         </header>
         <div className="section" onWheel={(e) => updateProject(e, inTransition)}>
+            <TopBar handleTransition={handleTransition}/>
             <div className="projects">
                 <div className="projects__info">
                     <div className="projects__info__scroller">

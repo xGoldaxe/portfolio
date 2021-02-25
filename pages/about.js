@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import TopBar from '../components/TopBar'
 
 
 export default function Home({handleTransition, transitionOver}) {
@@ -11,7 +12,8 @@ export default function Home({handleTransition, transitionOver}) {
             <div className="headerLine"></div>
             <Header handleTransition={handleTransition}/>
         </header>
-
+        <TopBar  handleTransition={handleTransition}/>
+        
         <div className="about__text">
             
             <p><span>Merci de votre visite ici !</span> Je suis Pierre Leveque et je suis développeur. 

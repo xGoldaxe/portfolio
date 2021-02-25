@@ -6,8 +6,8 @@ export default function Header({handleTransition}) {
     return (
         <nav>
             <StyledLink onClick={() => handleTransition('/', 'transition0')}>Accueil</StyledLink>
-            <StyledLink onClick={() => handleTransition('/project', 'transition0')}>Projects</StyledLink>
-            <StyledLink onClick={() => handleTransition('/about', 'transition0')}>About</StyledLink>
+            <StyledLink onClick={() => handleTransition('/project', 'transition0')}>Projets</StyledLink>
+            <StyledLink onClick={() => handleTransition('/about', 'transition0')}>A propos</StyledLink>
             <StyledLink>Blog</StyledLink>
         </nav>
     )

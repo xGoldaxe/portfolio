@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import homeAppear from '../src/js/animation/homeAppear'
 import Header from '../components/Header'
 import { makeCancelable } from '../src/js/lib/cancelablePromise'
+import TopBar from '../components/TopBar'
 
 export default function Home({handleTransition, transitionOver}) {
   const router = useRouter()
@@ -58,6 +59,7 @@ export default function Home({handleTransition, transitionOver}) {
               <Header handleTransition={handleTransition}/>
           </nav>
       </header>
+      <TopBar  handleTransition={handleTransition}/>
       <div className="presentationText">
         <h1>GoldStudio présente</h1>
         <p>Pierre Leveque
