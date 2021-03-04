@@ -80,6 +80,7 @@ export default function Home({handleTransition, transitionOver}) {
 
     return (
     <div className="projectsPage">
+        {/* image pre loader */}
         <div style={{display: "none"}}>
             {ALLPROJECTS.map((project,i)=>{
                 <img key={i} src={`/image/${project.image}`} />

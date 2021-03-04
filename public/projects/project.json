@@ -2,7 +2,7 @@
     "name":"Puissance 4 online",
     "date": "Jan. 2021",
     "tags": ["node","react","html","sass","heroku","personal hosting"],
-    "desc":"The goal of this projects was to train my fullstack skills, its an online power 4 working with the socket library : scocket.io. So its in real time. This webapp include differents kind of games : ranked and privates games. There is a matchmaking for ranked games. This webapp was made with node.js and react",
+    "desc":"L'objectif de ce projet était d’entraîner mes compétences en fullstack, c’est un puissance 4 en ligne et en temps réel. Il fonctionne grâce au web sockets via la librairie “socket.io”. Cette application web inclut différents types de parties; les parties classées et les parties privées. Chaque type de partie ce rejoins différemment (et notamment un système de matchmaking). Il y a encore d’autres fonctionnalités tel que l’inscription/ connexion, les pages profils, les historiques de parties … Cette application web utilise node et react.",
     "image": "power4.png",
     "link": "https://puissance4.pierreevl.com"
 },
@@ -10,7 +10,7 @@
     "name": "France Meme Landing Page",
     "date": "Jan. 2021",
     "tags": ["next.js","react","html","sass","personal hosting"],
-    "desc": "Presentation page of the biggest french meme server on discord!",
+    "desc": "Intégration d’un design pour un site de présentation du plus gros serveur discord de “memes” francophone!L'intérêt de ce site est sa hero banner animé! Réalisé avec next.js.",
     "image": "fm.PNG",
     "link": "https://francememe.pierreevl.com"
 },
@@ -18,7 +18,7 @@
     "name": "Blocky's game editor",
     "date": "Feb. 2021",
     "tags": ["vanilla js", "canvas api", "2d", "game", "personal hosting"],
-    "desc": "A small game made for fun, with a level editor to create your own amazing levels",
+    "desc": "Un petit jeu fait en javascript vanilla en exploitant l’api canvas. Un gameplay simple et efficace, des performances optimisées, pleins de niveaux, des collisions et même un éditeur de niveaux!",
     "image": "blocky.PNG",
     "link": "https://blocky.pierreevl.com"
 },
@@ -26,7 +26,7 @@
     "name": "Insane transition library",
     "date": "Oct. 2020",
     "tags": ["js", "html", "css", "npm", "library", "personal hosting"],
-    "desc": "My first library on npm, its provide great and optimised transition, using js promises and css animations. Also include the presentation website and a small documentation",
+    "desc": "Insane transition est une librairie de template d’animation simple et efficace. Prise en main en 1 min maximum. Les animations utilisent des propriétés css. Un site de présentation est une documentation on été ajouté autour de cette librairie.",
     "image": "insanet.PNG",
     "link": "https://insanetransition.pierreevl.com"
 }

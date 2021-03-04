@@ -104,7 +104,7 @@ export default function Home({handleTransition, transitionOver}) {
             </div>
         </div>
       <div id="circle--wrapper">
-          <img src='/image/pierre1.png' alt="pierre image"  width="288" height="804"/>
+          <img src='/image/pierre.png' alt="pierre image"  width="285.6" height="78.1"/>
       </div>
   </div>
 )}

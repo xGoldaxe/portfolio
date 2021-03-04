@@ -52,6 +52,7 @@ function MyApp({ Component, pageProps }) {
     {/* <Test /> */}
     <Head>
       <title>Pierre Leveque - portfolio</title>
+      <link rel="icon" href="image/logo.jpg" />
       <meta name="viewport" content="initial-scale=1, minimum-scale=1" />
       <meta name="description" content="Pierre leveque developpeur frontend, créateur d'application web et de site performant et optimisé SEO efficace grâce au technologies de points du développement web."/>
     </Head>
