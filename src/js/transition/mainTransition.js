@@ -9,13 +9,12 @@ export default function mainTransition(resolve,transitionSwap) {
     const entry = document.getElementById('entry')
 
     let max = 10
+    entry.style.display = flex
     for(let i = 0; i < max; i++) {
         createBlock(entry, {
-            width: 100/max +'%', 
+            flexGrow: 1, 
             height: '100%', 
             background: '#c1c1c1', 
-            position: 'absolute',
-            left: 100/max*i + '%',
             transform: 'scaleY(0)',
             transformOrigin: 'bottom right'
         })

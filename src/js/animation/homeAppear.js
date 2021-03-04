@@ -1,5 +1,6 @@
 import {gsap} from 'gsap'
 import createCircle, { drawCircleAnimation } from '../circleAppear';
+import headerAppear from './headerAppear';
 
 export default async function homeAppear(resolve) {
     var tl = gsap.timeline({
@@ -47,22 +48,8 @@ export default async function homeAppear(resolve) {
         ease: 'power2.in',
     }, "thirdStep")
 
-    //second step nav
-    tl.from('.headerLine', {
-        scaleY: 0,
-        ease: 'power4.in',
-        duration: 1
-    })
-    tl.from('header nav p', {
-        x: 20,
-        opacity: 0,
-        stagger: { // wrap advanced options in an object
-            each: 0.2,
-            from: "end",
-        }
-    })
-    tl.from('.scroll', {
-        x: 20,
-        opacity: 0,
-    })
+    //last step
+    tl.addLabel('lastStep')
+    headerAppear(tl, 0.7, "lastStep")
+
 }

@@ -25,7 +25,6 @@
         position: relative;
         width: 40vw;
         min-width: 400px;
-        max-width: 700px;
         box-sizing: border-box;
         padding: 50px;
         padding-top: 60px;
@@ -43,13 +42,13 @@
                 transform: rotate(180deg);
             }
         }
-        ul {
-            display: flex;
+        &__tag {
+            width: 100%;
             padding:0;
             color: darken(#c1c1c1, 40%);
             font-weight: 900;
             font-size: 25px;
-            display: inline;
+            overflow-wrap: break-word;
             li {
                 display: inline;
                 margin-right: 15px;
@@ -68,6 +67,8 @@
             margin-block-start: 1em;
             margin-block-end: 1em;
             line-height: 28px;
+            max-width: 700px;
+
         }
         a {
             font-size: 25px;
@@ -97,7 +98,7 @@
             height: auto;
             order: 1;
             img {
-                max-width: 100%;
+                width: 100%;
             }
         }
         &__desc {
@@ -114,7 +115,7 @@
             p {
                 font-size: 23px;
             }
-            ul {
+            &__tag {
                 li {
                     font-size: 20px;
                 }

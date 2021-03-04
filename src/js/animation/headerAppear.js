@@ -12,4 +12,8 @@ export default function headerAppear(tl, speed, label = "") {
             from: "end",
         }
     })
+    //mobile nav
+    tl.from('.topBar', {
+        opacity: 0
+    }, label)
 }
