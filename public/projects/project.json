@@ -7,12 +7,12 @@
     "link": "https://puissance4.pierreevl.com"
 },
 {
-    "name": "France Meme Landing Page",
+    "name": "France Memes",
     "date": "Jan. 2021",
     "tags": ["next.js","react","html","sass","personal hosting"],
-    "desc": "Intégration d’un design pour un site de présentation du plus gros serveur discord de “memes” francophone!L'intérêt de ce site est sa hero banner animé! Réalisé avec next.js.",
+    "desc": "Intégration d’un design pour un site de présentation du plus gros serveur discord de “memes” francophone! Réalisé sous next.js, nous avons réussi à mettre en place un site optimisé SEO et extrêment bon en performance",
     "image": "fm.PNG",
-    "link": "https://francememe.pierreevl.com"
+    "link": "https://francememe.vercel.app"
 },
 {
     "name": "Blocky's game editor",
