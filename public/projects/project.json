@@ -1,8 +1,16 @@
 {"projects":[{
+    "name": "VigorGo",
+    "date": "Mar. 2021",
+    "tags": ["react","html","sass","vercel","hackathon"],
+    "desc":"32h pour réaliser un projet! Voici le résultat du prototype, une application web présentent divers datas et permettant divers actions, comme la connection avec des profils similaires, une messagerie, un système de recommandations d'activitées, ect.. Un projet qui répond à une problématique posé par l'assurance Helsana, comment améliorer la santé des suisses, s'accompagne au protoypage toute une réfléxion autour du projet, une présentation du produit futur ainsi que du prototype.",
+    "image": "vigorgo.png",
+    "link": "https://vigorgo.pierreevl.com"
+},
+{
     "name":"Puissance 4 online",
     "date": "Jan. 2021",
     "tags": ["node","react","html","sass","heroku","personal hosting"],
-    "desc":"L'objectif de ce projet était d’entraîner mes compétences en fullstack, c’est un puissance 4 en ligne et en temps réel. Il fonctionne grâce au web sockets via la librairie “socket.io”. Cette application web inclut différents types de parties; les parties classées et les parties privées. Chaque type de partie ce rejoins différemment (et notamment un système de matchmaking). Il y a encore d’autres fonctionnalités tel que l’inscription/ connexion, les pages profils, les historiques de parties … Cette application web utilise node et react.",
+    "desc":"L'objectif de ce projet était d’entraîner mes compétences en fullstack, c’est un puissance 4 en ligne et en temps réel. Il fonctionne grâce au web sockets via la librairie “socket.io”. Cette application web inclut différents types de parties: les parties classées et les parties privées. Chaque type de partie se rejoins différemment (et notamment un système de matchmaking). Il y a encore d’autres fonctionnalités tel que l’inscription/ connexion, les pages profils, les historiques de parties … Cette application web utilise node et react.",
     "image": "power4.png",
     "link": "https://puissance4.pierreevl.com"
 },
