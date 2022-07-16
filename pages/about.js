@@ -20,8 +20,8 @@ export default function Home({handleTransition, transitionOver}) {
           I've build a strong background in computer science and low level developpment (
           c and c++ ), and got specialized in Front-end developement with the newer
           technologies like react and nextjs.
-          <hr/>You can take see my differents projects here, or take a look at my github.
-          <hr/>For more informations about my technical stack you can contact me on
+          <br/>You can take see my differents projects here, or take a look at my github.
+          <br/>For more informations about my technical stack you can contact me on
             Linkedin, discord and by email.
         </p>
         <div className="about__text__socials">
