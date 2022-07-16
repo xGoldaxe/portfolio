@@ -61,9 +61,10 @@ export default function Home({handleTransition, transitionOver}) {
       </header>
       <TopBar  handleTransition={handleTransition}/>
       <div className="presentationText">
-        <h1>GoldStudio présente</h1>
-        <p>Pierre Leveque
-        <br></br>Développeur Front-end</p>
+        <h1>Pierre Leveque</h1>
+        <p>Développeur Front-end
+        <br/>Développeur C C++
+        </p>
       </div>
       <div className="leftLine">
         <div className="leftLineBg"></div>
