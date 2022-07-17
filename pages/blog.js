@@ -34,7 +34,6 @@ function BlogContent({transitionOver}) {
 			<Article />
 			<Article />
 			<Article />
-			<Article />
 
 			<div className='blog__footer'>
 				<div className="blog__footer__text">This is the end my friend</div>

@@ -15,6 +15,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        opacity: 0;
         &__almostTitle {
             font-weight: 900;
             font-size: 30px;
@@ -64,11 +65,11 @@
 @media screen and (max-width: 1200px) {
     .about {
         flex-direction: column;
+        align-items: center;
         width: 100vw;
     }
     .about__text {
         width: 80%;
-        margin-left: 10%;
         p {
             font-size: 23px;
             letter-spacing: 0px;
@@ -87,15 +88,19 @@
 
 @media screen and (max-width: 900px) {
     .about__text {
-        width: 85%;
-        margin-left: 7.5%;
+        width: 100%;
+        padding: 0 20px;
         span {
             font-size: 20px;
         }
         p{
             font-size: 16px;
             line-height: 25px;
-            margin-block-start: 20px;
+            margin-block-start: 15px;
+            margin-block-end: 15px;
+        }
+        &__socials {
+            margin: 20px
         }
     }
 }

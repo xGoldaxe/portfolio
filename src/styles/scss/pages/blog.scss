@@ -7,8 +7,10 @@
 		font-size: 90px;
 		font-family: amgaro;
 		margin: 20px 0;
+		opacity: 0;
 	}
 	&__subtitle {
+		opacity: 0;
 		font-size: 20px;
 		color: darken($mainColor, 40%);
 		padding: 0 10px;
@@ -33,14 +35,15 @@
 	transform: translateX(-300px);
 	opacity: 0;
 	//
-	width: 94%;
+	width: 100%;
 	max-width: 1000px;
 	margin-top: 70px;
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0 20px;
+	padding: 0 15px;
+	box-sizing: border-box;
 	// background-color: $mainColor;
 	&__title {
 		background-color: $secondColor;
@@ -80,19 +83,35 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
+	.blog {
+		&__title {
+			font-size: 45px;
+		}
+		&__subtitle {
+			font-size: 16px;
+			text-align: center;
+		}
+		&__footer {
+			margin-top: 20px;
+		}
+	}
 	.article {
+		margin-top: 20px;
+
 		&__title {
 			font-size: 25px;
 		}
 		&__resume {
 			flex-direction: column;
 			align-items: center;
+			padding: 15px 0 5px 0;
+
 			&__image {
 				right: 0;
 			}
 			&__content {
-				margin-top: 20px;
+				margin: 10px 0;
 				font-size: 16px;
 				line-height: 20px;
 				word-break: break-all;

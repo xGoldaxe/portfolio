@@ -1,4 +1,12 @@
 export default function headerAppear(tl, speed, label = "") {
+    //mobile nav
+    tl.to('.topBar', {
+        opacity: 1,
+        ease: 'power4.in',
+        duration: 0.5,
+        delay: 0.5
+    }, label)
+
     tl.from('.headerLine', {
         scaleY: 0,
         ease: 'power4.in',
@@ -12,8 +20,4 @@ export default function headerAppear(tl, speed, label = "") {
             from: "end",
         }
     })
-    //mobile nav
-    tl.from('.topBar', {
-        opacity: 0
-    }, label)
 }

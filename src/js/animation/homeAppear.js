@@ -51,5 +51,4 @@ export default async function homeAppear(resolve) {
     //last step
     tl.addLabel('lastStep')
     headerAppear(tl, 0.7, "lastStep")
-
 }
