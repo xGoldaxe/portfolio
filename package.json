@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "contentful": "^9.1.32",
     "fs": "0.0.1-security",
     "gsap": "^3.6.0",
     "insanetransition": "^1.1.0-1",

@@ -1,26 +1,43 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import Header from '../components/Header'
+import Page from '../components/Page'
 import TopBar from '../components/TopBar'
 import { blogArticleAppear } from '../src/js/animation/blogArticleAppear'
 
-export default function Blog({handleTransition, transitionOver}) {
+let client = require('contentful').createClient({
+	space: 'qvbhdsetf6gx',
+	accessToken: 'E3_YCaH3rnbgi1ylxjTs6JP5KaviVJFgWtEwOJ8oCBk'
+})
 
-return (
-	<div className="about">
-		<header>
-			<div className="headerLine"></div>
-			<Header handleTransition={handleTransition}/>
-		</header>
-		<TopBar handleTransition={handleTransition}/>
+export async function getStaticProps() {
+	let data = await client.getEntries({
+		content_type: 'blog'
+	}).catch(()=>{})
 
-		<BlogContent transitionOver={transitionOver}/>
-
-	</div>
-)
+	return {
+		props:{
+			articles: data
+		},
+		revalidate: 1,
+	}
 }
 
+export default function Blog({handleTransition, transitionOver, articles}) {
+	
+	return (
 
-function BlogContent({transitionOver}) {
+		<Page handleTransition={handleTransition} transitionOver={transitionOver}>
+			{articles ?
+				<BlogContent handleTransition={handleTransition}
+				transitionOver={transitionOver} articles={articles.items}/>
+				:
+				<p>Error please retry later</p>
+			}
+		</Page>
+	)
+}
+
+function BlogContent({handleTransition, transitionOver, articles}) {
 	useEffect(()=>{
 		if (transitionOver)
 			blogArticleAppear()
@@ -31,9 +48,9 @@ function BlogContent({transitionOver}) {
 			<div className="blog__title">Blog</div>
 			<div className="blog__subtitle">Du code, des ressources utiles, des projets et autres</div>
 
-			<Article />
-			<Article />
-			<Article />
+			{articles.map((article, id)=>{
+				return (<Article handleTransition={handleTransition} key={id} article={article}/>)
+			})}
 
 			<div className='blog__footer'>
 				<div className="blog__footer__text">This is the end my friend</div>
@@ -47,22 +64,20 @@ function BlogContent({transitionOver}) {
 	)
 }
 
-function Article() {
-	
+function Article({article, handleTransition}) {
+
 	return (
-		<div className='article'>
-			<div className='article__title'>Lorem lorem lorem lorem</div>
+		<div className='article' onClick={()=> handleTransition(`/blog/${article.fields.slug}`, 'transition1')}>
+			<div className='article__title'>{article.fields.title}</div>
 			<div className='article__resume'>
-				<div className='article__resume__image'></div>
+				<img src={`https:${article.fields.thumnail.fields.file.url}`} alt=''
+				className='article__resume__image'/>
 				<div className='article__resume__content'>
-				Lorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem lorem
-				Lorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem lorem
-				Lorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem lorem
-				Lorem lorem lorem loremLorem lorem lorem loremLorem lorem lorem lorem
+					{article.fields.preview?.content[0]?.content[0]?.value} [...]
 				</div>
 			</div>
 			<div className='article__line'></div>
-			<img src='/image/textDecoration.svg' alt='' className='article__textDecoration'/>
+			<img src={'/image/textDecoration.svg'} alt='' className='article__textDecoration'/>
 		</div>
 	)
 }

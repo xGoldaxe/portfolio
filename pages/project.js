@@ -86,6 +86,7 @@ export default function Home({handleTransition, transitionOver}) {
                 <img key={i} src={`/image/${project.image}`} />
             })}
         </div>
+        
         <header>
             <div className="headerLine"></div>
             <Header handleTransition={handleTransition}/>
