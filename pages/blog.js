@@ -13,17 +13,18 @@ return (
 		</header>
 		<TopBar handleTransition={handleTransition}/>
 
-		<BlogContent />
+		<BlogContent transitionOver={transitionOver}/>
 
 	</div>
 )
 }
 
 
-function BlogContent() {
+function BlogContent({transitionOver}) {
 	useEffect(()=>{
-		blogArticleAppear()
-	}, [])
+		if (transitionOver)
+			blogArticleAppear()
+	}, [transitionOver])
 
 	return (
 		<div className="blog">

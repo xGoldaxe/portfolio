@@ -34,7 +34,8 @@ return (
 		<a href="https://www.linkedin.com/in/pierre-leveque-723399201/"><img src="/image/linkedin.svg"/></a>
 		<a href="mailto:pierreleveque.pro@gmail.com"><img src="/image/mail.svg"/></a>
 		</div>
-		<div className="about__text__line"></div>
+		<div className='about__line'></div>
+		<img src='/image/textDecoration.svg' alt='' className='about__textDecoration'/>
 	</div>
 
 
