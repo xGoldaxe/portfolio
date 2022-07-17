@@ -4,7 +4,7 @@
     "tags": ["react","html","sass","vercel","hackathon"],
     "desc":"32h pour réaliser un projet! Voici le résultat du prototype, une application web présentent divers datas et permettant divers actions, comme la connection avec des profils similaires, une messagerie, un système de recommandations d'activitées, ect.. Un projet qui répond à une problématique posé par l'assurance Helsana, comment améliorer la santé des suisses, s'accompagne au protoypage toute une réfléxion autour du projet, une présentation du produit futur ainsi que du prototype.",
     "image": "vigorgo.PNG",
-    "link": "https://vigorgo.pierreevl.com/register"
+    "link": "https://helsana-case.vercel.app/register"
 },
 {
     "name":"Puissance 4 online",
@@ -28,7 +28,7 @@
     "tags": ["vanilla js", "canvas api", "2d", "game", "personal hosting"],
     "desc": "Un petit jeu fait en javascript vanilla en exploitant l’api canvas. Un gameplay simple et efficace, des performances optimisées, pleins de niveaux, des collisions et même un éditeur de niveaux!",
     "image": "blocky.PNG",
-    "link": "https://blocky.pierreevl.com"
+    "link": "https://blocky-delta.vercel.app/"
 },
 {
     "name": "Insane transition library",
@@ -36,6 +36,6 @@
     "tags": ["js", "html", "css", "npm", "library", "personal hosting"],
     "desc": "Insane transition est une librairie de template d’animation simple et efficace. Prise en main en 1 min maximum. Les animations utilisent des propriétés css. Un site de présentation est une documentation on été ajouté autour de cette librairie.",
     "image": "insanet.PNG",
-    "link": "https://insanetransition.pierreevl.com"
+    "link": "https://insane-transition-doc.vercel.app/"
 }
 ]}

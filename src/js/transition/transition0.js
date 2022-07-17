@@ -6,7 +6,7 @@ export function transition0 (resolve, entry) {
     let max = 10
     for(let i = 0; i < max; i++) {
         createBlock(entry, {
-            width: 100/max +'%', 
+            width: 100/max + 2 + '%', 
             height: '100%', 
             background: '#debc7c', 
             position: 'absolute',

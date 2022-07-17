@@ -7,10 +7,11 @@
     padding: 20px;
     padding-bottom: 20px;
     z-index: 3;
-    p {
+    &__name {
         font-size: 20px;
         height: min-content;
         font-family: amgaro;
+        cursor: pointer;
     }
 }
 
@@ -59,7 +60,7 @@
         div {
             width: 100%;
             flex-grow: 1;
-            background: $mainColor;
+            background:#e8b4b4;
             transform-origin: top center;
         }
     }

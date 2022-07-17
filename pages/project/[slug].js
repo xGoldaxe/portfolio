@@ -25,11 +25,6 @@ export async function getStaticProps({ params }) {
 export default function Project({ projectData, handleTransition }) {
     return (
         <div className="project">
-
-            <div className="project__img">
-                <div className="project__img__bg"></div>
-                <img src={`/image/${projectData.image}`} alt=""/>
-            </div>
             <div className="project__desc">
                 <div className="project__desc__back" onClick={() => handleTransition('/project', 'transition1')}>
                     <img src="/image/arrow.svg" alt=""/>
@@ -41,11 +36,15 @@ export default function Project({ projectData, handleTransition }) {
                 </ul>
                 <h3>{projectData.name}</h3>
                 <p>{projectData.desc}</p>
-
-                <a className="project__desc__link" href={projectData.link}><p>Look at me</p></a>
-
             </div>
-
+            <a href={projectData.link}>
+                <div className="project__img">
+                    <div className="project__img__bg"></div>
+                    <img src={`/image/${projectData.image}`} alt=""/>
+                </div>
+            </a>
+            <div className='project__line'></div>
+            <img src='/image/textDecoration.svg' alt='' className='project__textDecoration'/>
         </div>
     )
 }
