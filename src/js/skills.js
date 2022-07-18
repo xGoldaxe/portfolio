@@ -81,39 +81,42 @@ function moveLine(i) {
     var tl = gsap.timeline({repeat: 0, repeatDelay: 0});
     tl.fromTo('.skillLineAnime',
     {   
-        xPercent: i !== 3 ? 100*i : 0,
-        x: i !== 3 ? 8*i : 0}, 
+        scaleX: 0,
+    },
     {
-        background: 'black',
         duration: i !== 3 ? 0.4 : 0.6,
         scaleX: 1,
-        xPercent: i !== 3 ? 100*i : 0,
-        x: i !== 3 ? 8*i : 0,
         ease: "power4.out",
         onStart: function(){
-            if(i === 3) {
-                document.querySelector('.skillLineAnime').style.width = `calc(${i*8 - 8}px + ${31.5*i}%)`
-                document.querySelector('.skillLineAnime').style.transformOrigin = "center right"
-            } else {
-                document.querySelector('.skillLineAnime').style.width = '31.5%'
+            document.querySelector('.skillLineAnime--box').style.transform = `translateY(-50%) scale(1,1)`
+
+            if(i !== 3) {
+                document.querySelector('.skillLineAnime--box').style.left = `${33*i + 0.5}%`
+                document.querySelector('.skillLineAnime--box').style.width = `${33}%`
                 document.querySelector('.skillLineAnime').style.transformOrigin = "center left"
             }
-    },
+            else {
+                document.querySelector('.skillLineAnime--box').style.left = '0'
+                document.querySelector('.skillLineAnime--box').style.width = `100%`
+                document.querySelector('.skillLineAnime').style.transformOrigin = "center right"
+            }
+        },
     })
-    tl.to('.skillLineAnime', {
-        background: 'black',
+    tl.fromTo('.skillLineAnime--box', {
+        scaleX: 1,
+    }, {
         scaleX: 0,
         ease: "power4.out",
         duration: i !== 3 ? 0.4 : 0.6,
         onStart: function(){
             if(i === 3) {
-                document.querySelector('.skillLineAnime').style.transformOrigin = "center left"
-                document.querySelector('.skillLineAnime').style.width = `calc(${i*8}px + ${31.5*i}%)`
+                document.querySelector('.skillLineAnime--box').style.transformOrigin = "center left"
+                // document.querySelector('.skillLineAnime').style.width = `calc(${i*8}px + ${31.5*i}%)`
             } else {
-                document.querySelector('.skillLineAnime').style.width = '31.5%'
-                document.querySelector('.skillLineAnime').style.transformOrigin = "center right"
+                // document.querySelector('.skillLineAnime').style.width = '31.5%'
+                document.querySelector('.skillLineAnime--box').style.transformOrigin = "center right"
             }
-        },
+        }
     }, `-=${i !==3 ? 0.2 : 0.4}`)
     return tl
 }

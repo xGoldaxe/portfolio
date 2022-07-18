@@ -5,6 +5,7 @@ import { aboutAppear } from '../../src/js/animation/aboutAppear'
 import { articlePageAppear } from '../../src/js/animation/articlePageAppear'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS } from '@contentful/rich-text-types'
+import Page from '../../components/Page'
 
 let client = require('contentful').createClient({
 	space: 'qvbhdsetf6gx',
@@ -51,15 +52,9 @@ export default function PageArticle({article, handleTransition, transitionOver})
 	}, [transitionOver])
 
 	return (
-		<div className='about'>
-			<header>
-				<div className="headerLine"></div>
-				<Header handleTransition={handleTransition}/>
-			</header>
-			<TopBar handleTransition={handleTransition}/>
-
+		<Page handleTransition={handleTransition} transitionOver={transitionOver}>
 			{article && <PageArticleContent article={article}/>}
-		</div>
+		</Page>
 	)
 }
 

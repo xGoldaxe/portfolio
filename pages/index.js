@@ -69,7 +69,9 @@ export default function Home({handleTransition, transitionOver}) {
       <div className="leftLine">
         <div className="leftLineBg"></div>
           <div className="skills">
-            <div className="skillLineAnime"></div>
+              <div className='skillLineAnime--box'>
+                <div className="skillLineAnime"></div>
+              </div>
               <div className="skill">
                   <div className="skill__text">
                       <svg  fill="#c1c1c1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

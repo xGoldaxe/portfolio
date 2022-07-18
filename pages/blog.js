@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Page from '../components/Page'
 import TopBar from '../components/TopBar'
@@ -32,7 +33,7 @@ export default function Blog({handleTransition, transitionOver, articles}) {
 				transitionOver={transitionOver} articles={articles.items}/>
 				:
 				<p>Error please retry later</p>
-			}
+			}			
 		</Page>
 	)
 }
@@ -51,15 +52,6 @@ function BlogContent({handleTransition, transitionOver, articles}) {
 			{articles.map((article, id)=>{
 				return (<Article handleTransition={handleTransition} key={id} article={article}/>)
 			})}
-
-			<div className='blog__footer'>
-				<div className="blog__footer__text">This is the end my friend</div>
-				<div className="menu__socials">
-	            	<a href="https://discordapp.com/users/283996693282947073"><img src="/image/discord.svg"/></a>
-                    <a href="https://www.linkedin.com/in/pierre-leveque-723399201/"><img src="/image/linkedin.svg"/></a>
-                    <a href="mailto:pierreleveque.pro@gmail.com"><img src="/image/mail.svg"/></a>
-                </div>
-			</div>
 		</div>
 	)
 }

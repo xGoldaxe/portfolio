@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+import Footer from "./Footer"
 import Header from "./Header"
 import TopBar from "./TopBar"
 
@@ -27,6 +28,8 @@ export default function Page({handleTransition, transitionOver, children}) {
 			<TopBar handleTransition={handleTransition}/>
 
 			{children}
+
+			<Footer/>
 		</div>
 	)
 }

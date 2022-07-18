@@ -77,8 +77,42 @@
 		&__content {
 			max-width: 800px;
 			p {
-				font-size: 17px;
-				line-height: 22px;
+				padding-left: 0px;
+			}
+			h1 {
+				padding-left: 23px;
+				&::before {
+					content:'';
+					position: absolute;
+					left: 10px;
+					background: #C39031;
+					height: 120%;
+					bottom: 0;
+					width: 8px;
+				}
+			}
+		}
+		&__decoLine {
+			margin-top: 15px;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.articlePage {
+		&__content {
+			p {
+				margin-block-start: 5px;
+				margin-block-end: 5px;
+				font-size: 15px;
+				line-height: 21px;
+			}
+			h1 {
+				font-size: 27px;
+			}
+			h1, h2, h3 {
+				margin-block-start: 10px;
+				margin-block-end: 10px;
 			}
 		}
 	}

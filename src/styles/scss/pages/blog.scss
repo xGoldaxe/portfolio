@@ -109,6 +109,9 @@
 
 			&__image {
 				right: 0;
+				width: auto;
+				max-width: 100%;
+				height: auto;
 			}
 			&__content {
 				margin: 10px 0;

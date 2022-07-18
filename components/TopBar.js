@@ -45,13 +45,15 @@ export default function TopBar({handleTransition}) {
             </div>
             {(menuOpen) && <div className="menu">
                 <div className="menu__bg">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
+                    <div className='menu__bg__block'><div className='menu__bg__block__inside'></div></div>
                 </div>
                 <div className="menu__top">
                     <p className={'topBar__name'}>Pierre EVL</p>
