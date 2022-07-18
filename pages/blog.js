@@ -12,7 +12,8 @@ let client = require('contentful').createClient({
 
 export async function getStaticProps() {
 	let data = await client.getEntries({
-		content_type: 'blog'
+		content_type: 'blog',
+		select: ['fields.slug', 'fields.title', 'fields.preview', 'fields.thumnail']
 	}).catch(()=>{})
 
 	return {
@@ -62,7 +63,7 @@ function Article({article, handleTransition}) {
 		<div className='article' onClick={()=> handleTransition(`/blog/${article.fields.slug}`, 'transition1')}>
 			<div className='article__title'>{article.fields.title}</div>
 			<div className='article__resume'>
-				<img src={`https:${article.fields.thumnail.fields.file.url}`} alt=''
+				<img src={`https:${article.fields.thumnail?.fields.file.url}`} alt=''
 				className='article__resume__image'/>
 				<div className='article__resume__content'>
 					{article.fields.preview?.content[0]?.content[0]?.value} [...]
