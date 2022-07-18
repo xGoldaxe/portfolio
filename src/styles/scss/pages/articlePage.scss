@@ -22,7 +22,7 @@
 	}
 	&__content {
 		width: 100%;
-		max-width: 900px;
+		max-width: 600px;
 		padding: 0px 15px;
 		box-sizing: border-box;
 		display: flex;
@@ -31,37 +31,42 @@
 		p {
 			margin-block-start: 10px;
 			margin-block-end: 10px;
-			font-size: 18px;
+			font-size: 15px;
 			line-height: 23px;
 			width: 100%;
-			padding-left: 15px;
+			max-width: 100%;
 			box-sizing: border-box;
 			position: relative;
+			&:hover {
+				&::before {
+					content:'';
+					position: absolute;
+					left: -8px;
+					background: $mainColor;
+					height: 100%;
+					bottom: 0;
+					width: 1px;
+				}
+			}
 		}
 		h1, h2, h3, h4, h5, h6 {
 			width: 100%;
+			margin-block-end: 10px;
 			position: relative;
+			border-bottom: 2px solid $secondColor;
+			padding-bottom: 2px;
 		}
 		h1 {
-			margin-block-start: 15px;
-			margin-block-end: 15px;
-			&::before {
-				content:'';
-				position: absolute;
-				left: -13px;
-				background: #C39031;
-				height: 120%;
-				bottom: 0;
-				width: 8px;
-			}
+			margin-block-start: 40px;
+			font-size: 35px;
 		}
-		h2 {
-			margin-block-start: 13px;
-			margin-block-end: 13px;
+		img {
+			width: 100%;
+			padding: 20px 0;
 		}
-		h3 {
-			margin-block-start: 10px;
-			margin-block-end: 10px;
+		code {
+			font-size: 12px;
+			line-height: 0px;
 		}
 	}
 	&__decoLine {
@@ -74,24 +79,6 @@
 		&__image {
 			aspect-ratio: 2/1;
 		}
-		&__content {
-			max-width: 800px;
-			p {
-				padding-left: 0px;
-			}
-			h1 {
-				padding-left: 23px;
-				&::before {
-					content:'';
-					position: absolute;
-					left: 10px;
-					background: #C39031;
-					height: 120%;
-					bottom: 0;
-					width: 8px;
-				}
-			}
-		}
 		&__decoLine {
 			margin-top: 15px;
 		}
@@ -102,17 +89,16 @@
 	.articlePage {
 		&__content {
 			p {
-				margin-block-start: 5px;
-				margin-block-end: 5px;
+				margin-block-start: 8px;
 				font-size: 15px;
-				line-height: 21px;
+				line-height: 23px;
+			}
+			h2, h3 {
+				margin-block-start: 20px;
 			}
 			h1 {
 				font-size: 27px;
-			}
-			h1, h2, h3 {
-				margin-block-start: 10px;
-				margin-block-end: 10px;
+				margin-block-start: 30px;
 			}
 		}
 	}

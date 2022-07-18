@@ -4,8 +4,100 @@ import TopBar from '../../components/TopBar'
 import { aboutAppear } from '../../src/js/animation/aboutAppear'
 import { articlePageAppear } from '../../src/js/animation/articlePageAppear'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { BLOCKS } from '@contentful/rich-text-types'
+import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import Page from '../../components/Page'
+import SyntaxHighlighter from 'react-syntax-highlighter';
+const dracula = {
+"hljs": {
+	"display": "block",
+	"overflowX": "auto",
+	"padding": "0.5em",
+	"background": "#282a36",
+	"color": "#f8f8f2"
+},
+"hljs-keyword": {
+	"color": "#8be9fd",
+	"fontWeight": "bold"
+},
+"hljs-selector-tag": {
+	"color": "#8be9fd",
+	"fontWeight": "bold"
+},
+"hljs-literal": {
+	"color": "#8be9fd",
+	"fontWeight": "bold"
+},
+"hljs-section": {
+	"color": "#8be9fd",
+	"fontWeight": "bold"
+},
+"hljs-link": {
+	"color": "#8be9fd"
+},
+"hljs-function .hljs-keyword": {
+	"color": "#ff79c6"
+},
+"hljs-subst": {
+	"color": "#f8f8f2"
+},
+"hljs-string": {
+	"color": "#f1fa8c"
+},
+"hljs-title": {
+	"color": "#f1fa8c",
+	"fontWeight": "bold"
+},
+"hljs-name": {
+	"color": "#f1fa8c",
+	"fontWeight": "bold"
+},
+"hljs-type": {
+	"color": "#f1fa8c",
+	"fontWeight": "bold"
+},
+"hljs-attribute": {
+	"color": "#f1fa8c"
+},
+"hljs-symbol": {
+	"color": "#f1fa8c"
+},
+"hljs-bullet": {
+	"color": "#f1fa8c"
+},
+"hljs-addition": {
+	"color": "#f1fa8c"
+},
+"hljs-variable": {
+	"color": "#f1fa8c"
+},
+"hljs-template-tag": {
+	"color": "#f1fa8c"
+},
+"hljs-template-variable": {
+	"color": "#f1fa8c"
+},
+"hljs-comment": {
+	"color": "#6272a4"
+},
+"hljs-quote": {
+	"color": "#6272a4"
+},
+"hljs-deletion": {
+	"color": "#6272a4"
+},
+"hljs-meta": {
+	"color": "#6272a4"
+},
+"hljs-doctag": {
+	"fontWeight": "bold"
+},
+"hljs-strong": {
+	"fontWeight": "bold"
+},
+"hljs-emphasis": {
+	"fontStyle": "italic"
+}
+};
 
 let client = require('contentful').createClient({
 	space: 'qvbhdsetf6gx',
@@ -59,7 +151,7 @@ export default function PageArticle({article, handleTransition, transitionOver})
 }
 
 function PageArticleContent({article}) {
-	
+
 	const date = new Date(article.fields.date)
 	return (
 		<div className="articlePage">
@@ -71,15 +163,32 @@ function PageArticleContent({article}) {
 			<div className='articlePage__date'>Posted {date.toDateString()}</div>
 			<div className='articlePage__content'>
 				{documentToReactComponents(article.fields.article, {
+						renderMark: {
+							[MARKS.CODE]: text => {
+								var spl = text.split('\\n')
+								text = ''
+								spl.forEach((t, i) => {
+									text += t
+									if (i < spl.length-1)
+										text += '\n'
+								});
+								return (
+								<SyntaxHighlighter language="javascript" showLineNumbers={true}
+								wrapLines={false}
+								wrapLongLines={'white-space: pre-wrap'}
+								style={dracula}
+								>
+								{`${text}`}
+								</SyntaxHighlighter>
+							)}
+						},
                         renderNode: {
                             [BLOCKS.EMBEDDED_ASSET]: (node,) => (
-                                <Image 
+                                <img
                                     src={'https:' + node.data.target.fields.file.url}
-                                    width={node.data.target.fields.file.details.image.width}
-                                    height={node.data.target.fields.file.details.image.height}
                                 />
-                            ),
-                        }, 
+                            )
+                        }
 				})}
 				<div className='about__line articlePage__decoLine'></div>
 				<img src='/image/textDecoration.svg' alt='' className='about__textDecoration'/>
