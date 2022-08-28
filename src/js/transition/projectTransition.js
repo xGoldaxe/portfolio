@@ -56,14 +56,14 @@ export default async function projectTransiton(reverse = false) {
             }, "firstLabel")
             //image
             tl.to('.projects__image__topDecoration', {
-                x: -15,
-                y: -15,
+                x: -20,
+                y: -20,
                 ease: 'power4.out',
                 duration: 0.5
             }, "firstLabel")
             tl.to('.projects__image__bottomDecoration', {
-                x: 15,
-                y: 15,
+                x: 20,
+                y: 20,
                 ease: 'power4.out',
                 duration: 0.5
             }, "firstLabel")

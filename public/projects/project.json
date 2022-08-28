@@ -1,4 +1,21 @@
-{"projects":[{
+{"projects":[
+{
+    "name": "Webserver",
+    "date": "Jun. 2022",
+    "tags": ["c++","http 1.1","server","backend","42", "rfc"],
+    "desc":"Un projet de l'école 42 qui vise à créer un serveur http en c++ 'from scratch', avec cpp 98 et sans bibliothèque. En suivant la spécification rfc du protocole HTTP 1/1 la plus récente. Le principe est simple, recevoir une demande, comprendre la demande et renvoyer une réponse cohérente. Notre serveur est capable de servir des pages, images et fichiers lourds. C'est en sorte une réplique de nginx, y compris avec un fichier de configuration. Un long projet nécessitant beaucoup de parsing, qui devait être testé. Nous avons obtenu de très bonnes performances,  un taux de disponibilité imbattable et une vitesse de téléchargement particulièrement efficace. Cela est dû à un mécanisme de file d'attente, permettant de répartir les requêtes les plus longues pour ne pas bloquer les plus petites. Le serveur conserve les connexions en keep-alive, il y a système de timeout, de redirection, de multi-serveurs et bien d'autres fonctionnalités, comme un vrai serveur.",
+    "image": "webserv.png",
+    "link": "https://github.com/xGoldaxe/webserv"
+},
+{
+    "name": "Raytracing",
+    "date": "Jun. 2022",
+    "tags": ["c","raytracing","math","3d"],
+    "desc":"Un projet visant à réaliser un simple dispositif de ray tracing, une technique datant de 1968, encore utilisé aujourd'hui dans l'animation, et plus recement le jeux video. Il permet d'afficher des formes géométriques avec un rendu pouvant se rapprocher très près de la réalité. En utilisant les mathématiques, la physique et beaucoup d'empirisme. Ci-dessous et propose une intégration avec le langage C les principes de base cette technologie. Il est possible d'afficher des sphères, des cylindres et des plans. Avec réflectivité et lumieres de couleur.",
+    "image": "webserv.png",
+    "link": "https://github.com/xGoldaxe/webserv"
+},
+{
     "name": "VigorGo",
     "date": "Mar. 2021",
     "tags": ["react","html","sass","vercel","hackathon"],
