@@ -4,14 +4,15 @@
     flex-direction: column;
     align-items: center;
     &__img {
-        width: 100%;
-        max-width: 800px;
+        width: 800px;
+        max-width: 100%;
         overflow: hidden;
         display: flex;
         justify-content: center;
         position: relative;
         img {
             width: 100%;
+            display: block;
         }
         &__bg {
             background: darken(#c1c1c1, 40%);
@@ -78,6 +79,7 @@
     &__line {
         width: 80%;
         height: 3px;
+        position: relative;
         background: $secondColor;
         margin-top: 40px;
         max-width: 800px;

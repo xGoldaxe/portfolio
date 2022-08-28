@@ -12,8 +12,8 @@
     "date": "Jun. 2022",
     "tags": ["c","raytracing","math","3d"],
     "desc":"Un projet visant à réaliser un simple dispositif de ray tracing, une technique datant de 1968, encore utilisé aujourd'hui dans l'animation, et plus recement le jeux video. Il permet d'afficher des formes géométriques avec un rendu pouvant se rapprocher très près de la réalité. En utilisant les mathématiques, la physique et beaucoup d'empirisme. Ci-dessous et propose une intégration avec le langage C les principes de base cette technologie. Il est possible d'afficher des sphères, des cylindres et des plans. Avec réflectivité et lumieres de couleur.",
-    "image": "webserv.png",
-    "link": "https://github.com/xGoldaxe/webserv"
+    "image": "rt.png",
+    "link": "https://github.com/xGoldaxe/minirt"
 },
 {
     "name": "VigorGo",
