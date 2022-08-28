@@ -27,7 +27,6 @@ export default function Home({handleTransition, transitionOver}) {
         if(transitionOver) {
             document.querySelector('.projectsPage').style.display = "flex"
             
-            ////
             cancelablePromise = makeCancelable(
                 new Promise((resolve, reject) => {
                     tl = projectAppear(resolve)
