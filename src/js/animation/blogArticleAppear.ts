@@ -1,6 +1,5 @@
 import {gsap} from 'gsap'
 import headerAppear from './headerAppear'
-import menuAppear from './menuAppear'
 
 export function blogArticleAppear () {
 

@@ -1,8 +1,5 @@
-import { useEffect, useRef } from 'react'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import React, { useEffect } from 'react'
 import Page from '../components/Page'
-import TopBar from '../components/TopBar'
 import { blogArticleAppear } from '../src/js/animation/blogArticleAppear'
 
 let client = require('contentful').createClient({

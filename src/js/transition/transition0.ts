@@ -28,7 +28,7 @@ export function transition0 (resolve, entry) {
     })
 }
 
-export function reverseTransition0 (resolve, entry) {
+export function reverseTransition0(resolve, entry: HTMLElement) {
     let tl = gsap.timeline({
         onComplete: function() {
             resolve()

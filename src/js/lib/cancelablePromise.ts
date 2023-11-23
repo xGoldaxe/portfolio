@@ -1,4 +1,9 @@
-export const makeCancelable = (promise) => {
+export interface MakeCancelableReturn {
+    promise: Promise<any>;
+    cancel: () => void;
+}
+
+export const makeCancelable = (promise): MakeCancelableReturn => {
     let hasCanceled_ = false;
   
     const wrappedPromise = new Promise((resolve, reject) => {

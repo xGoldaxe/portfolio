@@ -1,7 +1,4 @@
-import Header from '../components/Header'
-import TopBar from '../components/TopBar'
-import StyledLink from '../components/StyledLink'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { aboutAppear } from '../src/js/animation/aboutAppear'
 import Page from '../components/Page'
 

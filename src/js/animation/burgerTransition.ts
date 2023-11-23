@@ -1,6 +1,6 @@
 import {gsap} from 'gsap'
 
-export default function burgerTransition(speed) {
+export default function burgerTransition() {
     var tl = gsap.timeline({});
     let bar = document.querySelectorAll('.animatedBurger div')
     tl.addLabel('firstLabel')

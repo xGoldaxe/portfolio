@@ -1,5 +1,5 @@
 import {gsap} from 'gsap'
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 
 export default function StyledLink({children, onClick, className = "link"}) {
     const ref = useRef(null)
@@ -7,7 +7,6 @@ export default function StyledLink({children, onClick, className = "link"}) {
     const onEnter = () => {
         gsap.to(ref.current, {
             scaleX: 1,
-            duration: 1,
             ease: "power2.out",
             duration: 0.3,
             onStart: function(){
@@ -19,7 +18,6 @@ export default function StyledLink({children, onClick, className = "link"}) {
     function onLeave() {
         gsap.to(ref.current, {
             scaleX: 0,
-            duration: 1,
             ease: "power2.out",
             duration: 0.3,
             onStart: function(){

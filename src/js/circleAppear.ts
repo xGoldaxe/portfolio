@@ -2,10 +2,10 @@ import generateAnimation from './generateAnimation'
 
 export default function createCircle() {
     let createdCanvas = document.createElement('canvas')
-    createdCanvas.width = document.querySelector('#circle--wrapper').offsetWidth
-    createdCanvas.height = document.querySelector('#circle--wrapper').offsetWidth
+    createdCanvas.width = (document.querySelector('#circle--wrapper') as HTMLDivElement).offsetWidth
+    createdCanvas.height = (document.querySelector('#circle--wrapper') as HTMLDivElement).offsetWidth
     createdCanvas.id = "circle"
-    let newCanvas = document.querySelector('#circle--wrapper').appendChild(createdCanvas)
+    let newCanvas = (document.querySelector('#circle--wrapper') as HTMLDivElement).appendChild(createdCanvas)
     //resize listener
     window.addEventListener('resize', () => resize(newCanvas,'#circle--wrapper'))
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { transition1 } from '../src/js/transition/transition1'
 import StyledLink from './StyledLink'
 
 export default function Header({handleTransition}) {

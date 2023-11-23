@@ -13,11 +13,11 @@ export default function projectAppear(resolve) {
         duration: 0.5,
         ease: 'power4.in',
     })
-    let texts = []
+    let texts: Element[] = []
 
-    texts.push(document.querySelectorAll('.projects__info__desc__textContainer'))
-    texts.push(document.querySelectorAll('.projects__info__scroller__previous p'))
-    texts.push(document.querySelectorAll('.projects__info__scroller__previous h4'))
+    texts.push(...document.querySelectorAll('.projects__info__desc__textContainer'))
+    texts.push(...document.querySelectorAll('.projects__info__scroller__previous p'))
+    texts.push(...document.querySelectorAll('.projects__info__scroller__previous h4'))
     tl.addLabel("firstLabel")
     tl.from(texts, {
         opacity: 0,

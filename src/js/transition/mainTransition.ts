@@ -3,13 +3,17 @@ import {gsap} from "gsap"
 export default function mainTransition(resolve,transitionSwap) {
     if(document.getElementById('entry')) {return}
     let newElt = document.createElement('div')
-    newElt.id = 'entry'
-    document.querySelector('body').appendChild(newElt)
+    newElt.id = 'entry';
+    (document.querySelector('body') as HTMLElement).appendChild(newElt)
     
     const entry = document.getElementById('entry')
 
+    if (!entry) {
+        return;
+    }
+
     let max = 10
-    entry.style.display = flex
+    entry.style.display = "flex";
     for(let i = 0; i < max; i++) {
         createBlock(entry, {
             flexGrow: 1, 

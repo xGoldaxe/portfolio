@@ -1,17 +1,16 @@
-import {gsap} from 'gsap'
-import createBlock from "../lib/createBlock"
+import { gsap } from 'gsap'
 import burgerTransition from './burgerTransition';
 
-export default function menuAppear(resolve, value = true) {
+export default function menuAppear(resolve, value: number = 0) {
 
     var tl = gsap.timeline({
-        onReverseComplete: function() {
+        onReverseComplete: function () {
             resolve()
         }
     });
     tl.addLabel('firstLabel')
     tl.add(burgerTransition(), "firstLabel")
-    
+
     tl.from('.menu__bg div', {
         scaleY: 0,
         ease: 'power3.out',
@@ -34,8 +33,8 @@ export default function menuAppear(resolve, value = true) {
     })
 
 
-    if(value !== true) {
-        tl.reverse(value)
+    if (value === 1) {
+        tl.reverse();
     }
     return tl
 }

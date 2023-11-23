@@ -36,14 +36,16 @@ export default async function projectTransiton(reverse = false) {
             }, "firstLabel")
             let allTexts = [...document.querySelectorAll('.projects__info__desc__textContainer')].map((text)=>text.firstChild)
             allTexts.forEach(text => tl.to(text, {
-                y: text.parentNode.offsetHeight,
+                // @ts-ignore
+                y: text?.parentNode?.offsetHeight,
                 duration: 0.5,
                 ease: 'power1.out',
             }, "firstLabel"))
         } else {
             let allTexts = [...document.querySelectorAll('.projects__info__desc__textContainer')].map((text)=>text.firstChild)
             allTexts.forEach(text => tl.fromTo(text, {
-                y: -text.parentNode.offsetHeight
+                // @ts-ignore
+                y: -text?.parentNode?.offsetHeight
             },{
                 y: 0,
                 duration: 0.5,

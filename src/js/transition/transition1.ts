@@ -34,7 +34,7 @@ export function transition1 (resolve, entry) {
     }, 'firstLabel')
 }
 
-export function reverseTransition1 (resolve, entry) {
+export function reverseTransition1 (resolve, entry: HTMLElement) {
     let tl = gsap.timeline({
         onComplete: function() {
             resolve()

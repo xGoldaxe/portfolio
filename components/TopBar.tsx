@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import StyledLink from './StyledLink'
 import menuAppear from '../src/js/animation/menuAppear'
-import {gsap} from 'gsap'
-import burgerTransition from '../src/js/animation/burgerTransition'
 
 export default function TopBar({handleTransition}) {
     const [menuOpen, setMenuOpen] = useState(false)
-    const [tl, letTl] = useState(false)
+    const [tl, letTl] = useState(null)
 
 
 
